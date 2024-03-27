@@ -1,0 +1,23 @@
+﻿<Window x:Class="MVVMVMVMVM.View.CurrencySelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:MVVMVMVMVM.ViewModels"
+        mc:Ignorable="d"
+        Title="Currency Selection Window"
+        MinHeight="300" MinWidth="300">
+    <Window.DataContext>
+        <viewModels:CurrencySelectionViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <ListView ItemsSource="{Binding Currencies}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Currency" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Exchange Rate to RUB" DisplayMemberBinding="{Binding Rate}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
